@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  OWNER
+  ADMIN
+  HR
+  FINANCE
+  MARKETING
+  VIEWER
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  displayName  String
+  passwordHash String
+  role         Role     @default(VIEWER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  transactions Transaction[]
+}
+
+model Transaction {
+  id          String          @id @default(cuid())
+  label       String
+  type        TransactionType
+  amount      Decimal         @db.Decimal(14, 2)
+  occurredAt  DateTime
+  category    String
+  approved    Boolean         @default(false)
+  createdById String
+  createdBy   User            @relation(fields: [createdById], references: [id])
+  createdAt   DateTime        @default(now())
+
+  @@index([occurredAt])
+  @@index([type])
+}
+
+model Employee {
+  id           String   @id @default(cuid())
+  firstName    String
+  lastName     String
+  email        String   @unique
+  department   String
+  jobTitle     String
+  salaryCents  Int
+  active       Boolean  @default(true)
+  hiredAt      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  name          String
+  sku           String   @unique
+  priceCents    Int
+  stockQuantity Int      @default(0)
+  status        String   @default("active")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Campaign {
+  id          String   @id @default(cuid())
+  name        String
+  channel     String
+  budgetCents Int
+  spendCents  Int      @default(0)
+  impressions Int      @default(0)
+  clicks      Int      @default(0)
+  conversions Int      @default(0)
+  startsAt    DateTime
+  endsAt      DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
