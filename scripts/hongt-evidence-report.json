@@ -1,5 +1,5 @@
 {
-  "contract": "Velora Supercar Showroom Management — premium dark-mode dashboard for vehicle inventory, sales transactions, employees, and campaigns. Audience: showroom managers, sales associates, admins, finance. Tone: refined, technical, calm. Constraints: React 19 + TypeScript + Vite, Tailwind-ready design tokens, dark mode by default, lucide-react icons, recharts charts, WCAG 2.1 AA, responsive mobile (390x844) and desktop (1440x900).",
+  "contract": "HongT Supercar Showroom Management — premium dark-mode dashboard for vehicle inventory, sales transactions, employees, and campaigns. Audience: showroom managers, sales associates, admins, finance. Tone: refined, technical, calm. Constraints: React 19 + TypeScript + Vite, Tailwind-ready design tokens, dark mode by default, lucide-react icons, recharts charts, WCAG 2.1 AA, responsive mobile (390x844) and desktop (1440x900).",
   "targetViewports": ["390x844", "1440x900"],
   "accessibility": {
     "status": "pass",
@@ -18,7 +18,7 @@
     "permission": { "status": "not-applicable", "reason": "Role-based UI gating (OWNER/ADMIN/HR/FINANCE/MARKETING/VIEWER) defined in Prisma but not yet enforced in client. Permission banner pattern documented." }
   },
   "renderedEvidence": [
-    { "viewport": "390x844", "artifact": "velora-mobile-dashboard.txt", "observation": "Mobile layout: sidebar collapses to overlay, metrics stack vertically, vehicle cards single column, transaction table scrolls horizontally." },
-    { "viewport": "1440x900", "artifact": "velora-desktop-dashboard.txt", "observation": "Desktop layout: persistent sidebar, 4-col metrics grid, 2-col vehicle cards, full transaction table visible, showcase modal accessible." }
+    { "viewport": "390x844", "artifact": "hongt-mobile-dashboard.txt", "observation": "Mobile layout: sidebar collapses to overlay, metrics stack vertically, vehicle cards single column, transaction table scrolls horizontally." },
+    { "viewport": "1440x900", "artifact": "hongt-desktop-dashboard.txt", "observation": "Desktop layout: persistent sidebar, 4-col metrics grid, 2-col vehicle cards, full transaction table visible, showcase modal accessible." }
   ]
 }

@@ -1,6 +1,6 @@
-# Velora Enterprise
+# HongT Enterprise
 
-Velora is a Notion-inspired enterprise workspace with a premium supercar showcase. The current vertical slice includes the React dashboard, responsive navigation, KPI overview, chart/activity demo data, a showcase modal, and a typed Node.js API foundation.
+HongT is a Notion-inspired enterprise workspace with a premium supercar showcase. The current vertical slice includes the React dashboard, responsive navigation, KPI overview, chart/activity demo data, a showcase modal, and a typed Node.js API foundation.
 
 ## Stack
 
@@ -25,8 +25,8 @@ npm run dev:api
 The seeded demo account is:
 
 ```text
-Email: admin@velora.demo
-Password: VeloraDemo123!
+Email: admin@hongt.demo
+Password: HongTDemo123!
 ```
 
 The demo account is for local development only. Set `JWT_SECRET` and `DATABASE_URL` before deploying.

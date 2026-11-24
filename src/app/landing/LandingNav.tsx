@@ -17,15 +17,15 @@ export function LandingNav({ menuOpen, onMenuToggle, onNavigateMenu, onOpenDashb
         background: 'linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.4) 55%, transparent)',
       }}
     >
-      <button className="landing-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Velora home">
-        <span>V</span><strong>velora</strong>
+      <button className="landing-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="HongT home">
+        <span>HT</span><strong>HongT</strong>
       </button>
       <nav className={menuOpen ? 'landing-links landing-links--open' : 'landing-links'} aria-label="Public navigation">
-        <a href="#collection" onClick={onNavigateMenu}>Collection</a>
-        <a href="#performance" onClick={onNavigateMenu}>Performance</a>
-        <a href="#private-viewing" onClick={onNavigateMenu}>Private viewing</a>
+        <a href="#collection" onClick={onNavigateMenu}>Range</a>
+        <a href="#performance" onClick={onNavigateMenu}>Innovation</a>
+        <a href="#private-viewing" onClick={onNavigateMenu}>Dealers</a>
       </nav>
-      <button className="landing-admin" onClick={onOpenDashboard}>Admin portal <ArrowUpRight size={15} /></button>
+      <button className="landing-admin" onClick={onOpenDashboard}>Admin <ArrowUpRight size={15} /></button>
       <button className="landing-menu" onClick={onMenuToggle} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>
         {menuOpen ? <X size={20} /> : <Menu size={20} />}
       </button>

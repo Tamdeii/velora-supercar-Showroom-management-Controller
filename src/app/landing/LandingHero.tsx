@@ -18,17 +18,16 @@ export function LandingHero() {
         }}
       />
       <div className="landing-hero-copy">
-        <p className="landing-eyebrow">Velora Signature Collection · 2026</p>
-        <h1 id="landing-title">Rare machines.<br /><em>Exacting standards.</em></h1>
-        <p className="landing-subtitle">A private collection of performance cars, selected for character, provenance, and the way they make every road feel deliberate.</p>
+        <h1 id="landing-title">Rare machines.<br /> <em>Luxurious standards.</em></h1>
+        <p className="landing-subtitle">A private collection of super cars, selected for VIP, and the way they make every road feel furious</p>
         <div className="landing-actions">
-          <a className="landing-primary" href="#collection">Explore collection <ArrowUpRight size={16} /></a>
-          <a className="landing-secondary" href="#private-viewing">Arrange a viewing</a>
+          <a className="landing-primary" href="#collection">Discover <ArrowUpRight size={16} /></a>
+          <a className="landing-secondary" href="#private-viewing">Enquire</a>
         </div>
       </div>
       <div
         className="landing-hero-visual"
-        aria-label="Velora V1 Carbon Edition"
+        aria-label="HongT V1 Carbon Edition"
         style={{ position: 'absolute', zIndex: 0, inset: 0, width: '100%', height: '100%' }}
       >
         <video className="landing-hero-video" autoPlay muted loop playsInline poster={landingMedia.heroPoster}>

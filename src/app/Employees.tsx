@@ -14,9 +14,9 @@ type Employee = {
 }
 
 const employees: Employee[] = [
-  { id: 'e1', firstName: 'Maria', lastName: 'Garcia', email: 'maria@velora.com', department: 'Sales', jobTitle: 'Senior Sales Associate', salaryCents: 4500000, active: true },
-  { id: 'e2', firstName: 'James', lastName: 'Chen', email: 'james@velora.com', department: 'Service', jobTitle: 'Service Manager', salaryCents: 6500000, active: true },
-  { id: 'e3', firstName: 'Sophie', lastName: 'Dupont', email: 'sophie@velora.com', department: 'Sales', jobTitle: 'Sales Associate', salaryCents: 3200000, active: true },
+  { id: 'e1', firstName: 'Maria', lastName: 'Garcia', email: 'maria@hongt.com', department: 'Sales', jobTitle: 'Senior Sales Associate', salaryCents: 4500000, active: true },
+  { id: 'e2', firstName: 'James', lastName: 'Chen', email: 'james@hongt.com', department: 'Service', jobTitle: 'Service Manager', salaryCents: 6500000, active: true },
+  { id: 'e3', firstName: 'Sophie', lastName: 'Dupont', email: 'sophie@hongt.com', department: 'Sales', jobTitle: 'Sales Associate', salaryCents: 3200000, active: true },
 ]
 
 export function EmployeesPage({ onNotice }: { onNotice: (message: string) => void }) {

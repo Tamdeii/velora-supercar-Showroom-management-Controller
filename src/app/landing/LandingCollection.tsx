@@ -5,8 +5,8 @@ export function LandingCollection() {
   return (
     <section className="landing-collection" id="collection">
       <div className="landing-section-heading">
-        <div><p className="landing-eyebrow">Selected vehicles</p><h2>The current line-up</h2></div>
-        <a href="#private-viewing">Arrange a viewing <ArrowUpRight size={15} /></a>
+        <div><p className="landing-eyebrow">HongT V1 Range</p><h2>The V1 Range</h2></div>
+        <a href="#private-viewing">Book a Private Viewing <ArrowUpRight size={15} /></a>
       </div>
       <div className="landing-vehicle-grid">
         {landingMedia.vehicles.map((vehicle) => (

@@ -7,16 +7,16 @@ describe('environment configuration', () => {
       NODE_ENV: 'production',
       PORT: '4100',
       JWT_SECRET: 'a'.repeat(32),
-      DATABASE_URL: 'postgresql://user:password@localhost:5432/velora',
-      CLIENT_ORIGIN: 'https://velora.example.com',
+      DATABASE_URL: 'postgresql://user:password@localhost:5432/hongt',
+      CLIENT_ORIGIN: 'https://hongt.example.com',
     })
 
     expect(config).toEqual({
       nodeEnv: 'production',
       port: 4100,
       jwtSecret: 'a'.repeat(32),
-      databaseUrl: 'postgresql://user:password@localhost:5432/velora',
-      clientOrigin: 'https://velora.example.com',
+      databaseUrl: 'postgresql://user:password@localhost:5432/hongt',
+      clientOrigin: 'https://hongt.example.com',
     })
   })
 
@@ -27,6 +27,6 @@ describe('environment configuration', () => {
   })
 
   it('allows the test-only secret fallback', () => {
-    expect(loadConfig({ NODE_ENV: 'test' }).jwtSecret).toBe('test-only-velora-jwt-secret-1234567890')
+    expect(loadConfig({ NODE_ENV: 'test' }).jwtSecret).toBe('test-only-hongt-jwt-secret-1234567890')
   })
 })

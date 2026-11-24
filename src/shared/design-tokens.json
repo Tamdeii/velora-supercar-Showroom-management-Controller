@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/design-token",
-  "name": "Velora — Supercar Showroom Design Tokens",
+  "name": "HongT — Supercar Showroom Design Tokens",
   "description": "Extracted from existing CSS variables + UI/UX Pro Max Dark Mode palette. Premium automotive: charcoal surfaces, Sonata Gold accent, Space Grotesk + Inter + DM Mono typography.",
   "version": "1.0.0",
   "platform": "web",

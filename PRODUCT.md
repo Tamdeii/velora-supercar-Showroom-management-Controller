@@ -1,7 +1,7 @@
-# Velora — Supercar Showroom Management
+# HongT — Supercar Showroom Management
 
 ## Product
-Velora Enterprise — a premium showroom management controller for supercar dealerships. Staff manage vehicle inventory, sales transactions, employees, and marketing campaigns through a single dashboard.
+HongT Enterprise — a premium showroom management controller for supercar dealerships. Staff manage vehicle inventory, sales transactions, employees, and marketing campaigns through a single dashboard.
 
 ## Audience
 - Showroom managers (daily use, need to scan inventory and sales at a glance)

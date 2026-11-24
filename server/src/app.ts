@@ -21,7 +21,7 @@ export async function buildApp(): Promise<FastifyInstance> {
   await app.register(cors, { origin: config.clientOrigin })
   await app.register(jwt, { secret: config.jwtSecret })
 
-  app.get('/health', async () => ({ status: 'ok', service: 'velora-api' }))
+  app.get('/health', async () => ({ status: 'ok', service: 'hongt-api' }))
 
   app.post('/api/auth/login', async (request, reply) => {
     const result = loginSchema.safeParse(request.body)

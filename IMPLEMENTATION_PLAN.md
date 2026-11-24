@@ -1,4 +1,4 @@
-# Velora Enterprise Implementation Plan
+# HongT Enterprise Implementation Plan
 
 ## Execution protocol
 

@@ -68,15 +68,15 @@ export function App() {
     <div className="app-shell">
       <aside className={`sidebar ${isCollapsed ? 'sidebar--collapsed' : ''} ${isSidebarOpen ? 'sidebar--open' : ''}`}>
         <div className="brand-row">
-          <div className="brand-mark">V</div>
-          {!isCollapsed && <span className="brand-name">velora</span>}
+          <div className="brand-mark">HT</div>
+          {!isCollapsed && <span className="brand-name">HongT</span>}
           <button className="icon-button sidebar-close" onClick={() => setSidebarOpen(false)} aria-label="Close navigation">
             <X size={18} />
           </button>
         </div>
         <div className="workspace-switcher">
-          <div className="workspace-avatar">VE</div>
-          {!isCollapsed && <><div className="workspace-copy"><strong>Velora Enterprise</strong><span>Business workspace</span></div><ChevronRight size={15} /></>}
+          <div className="workspace-avatar">HT</div>
+          {!isCollapsed && <><div className="workspace-copy"><strong>HongT Enterprise</strong><span>Business workspace</span></div><ChevronRight size={15} /></>}
         </div>
         <nav aria-label="Main navigation">
           <span className="nav-caption">{!isCollapsed && 'Workspace'}</span>
@@ -168,7 +168,7 @@ function SectionPlaceholder({ title, onNotice }: { title: string; onNotice: (mes
 }
 
 function ShowcaseModal({ onClose }: { onClose: () => void }) {
-  return <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="Product showcase"><div className="showcase-modal"><button className="modal-close icon-button" onClick={onClose} aria-label="Close showcase"><X size={18} /></button><div className="showcase-visual"><div className="showcase-glow" /><div className="showcase-copy"><span className="eyebrow">Velora signature collection</span><h2>Designed to<br /><em>move differently.</em></h2><p>Explore a curated portfolio of performance, precision, and presence.</p><button className="light-button">Explore collection <ArrowUpRight size={15} /></button></div><div className="car-silhouette" aria-hidden="true">V</div></div><div className="showcase-footer"><span>01 / 03</span><strong>Velora V1 — Carbon Edition</strong><span>Scroll to explore <ChevronRight size={14} /></span></div></div></div>
+  return <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="Product showcase"><div className="showcase-modal"><button className="modal-close icon-button" onClick={onClose} aria-label="Close showcase"><X size={18} /></button><div className="showcase-visual"><div className="showcase-glow" /><div className="showcase-copy"><span className="eyebrow">HongT signature collection</span><h2>Designed to<br /><em>move differently.</em></h2><p>Explore a curated portfolio of performance, precision, and presence.</p><button className="light-button">Explore collection <ArrowUpRight size={15} /></button></div><div className="car-silhouette" aria-hidden="true">HT</div></div><div className="showcase-footer"><span>01 / 03</span><strong>HongT V1 — Carbon Edition</strong><span>Scroll to explore <ChevronRight size={14} /></span></div></div></div>
 }
 
 function MoreDots() { return <span className="more-dots">•••</span> }

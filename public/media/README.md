@@ -1,4 +1,4 @@
-# Velora public media
+# HongT public media
 
 Place optimized website assets in these folders:
 

@@ -31,8 +31,8 @@ export function SettingsPage({ onNotice }: { onNotice: (message: string) => void
           <section className="settings-section">
             <div className="settings-section-heading"><div><h2>Workspace profile</h2><p>Basic information shown across the showroom workspace.</p></div></div>
             <div className="settings-fields">
-              <label><span>Workspace name</span><input defaultValue="Velora Enterprise" /></label>
-              <label><span>Primary email</span><input type="email" defaultValue="admin@velora.com" /></label>
+              <label><span>Workspace name</span><input defaultValue="HongT Enterprise" /></label>
+              <label><span>Primary email</span><input type="email" defaultValue="admin@hongt.com" /></label>
               <label><span>Showroom location</span><input defaultValue="Beverly Hills Flagship" /></label>
               <label><span>Timezone</span><select defaultValue="America/Los_Angeles"><option value="America/Los_Angeles">Pacific Time</option><option value="America/New_York">Eastern Time</option><option value="Europe/London">London</option></select></label>
             </div>

@@ -4,7 +4,7 @@ import type { AuthUser, Transaction } from './types.js'
 type StoredUser = AuthUser & { passwordHash: string }
 
 const users: StoredUser[] = [
-  { id: 'demo-admin', email: 'admin@velora.demo', displayName: 'Alex Morgan', role: 'ADMIN', passwordHash: hashPassword('VeloraDemo123!', 'demo-salt') },
+  { id: 'demo-admin', email: 'admin@hongt.demo', displayName: 'Alex Morgan', role: 'ADMIN', passwordHash: hashPassword('HongTDemo123!', 'demo-salt') },
 ]
 
 const transactions: Transaction[] = [

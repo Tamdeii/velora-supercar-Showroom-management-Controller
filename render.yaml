@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: hongt-api
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci && npm run build:api
+    startCommand: node dist-server/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_ORIGIN
+        sync: false

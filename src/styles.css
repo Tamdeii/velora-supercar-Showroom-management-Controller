@@ -101,7 +101,7 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }.mobile-backdrop { display: none; }
 @media (max-width: 980px) { .sidebar { width: 220px; }.content-grid { grid-template-columns: 1fr; }.metrics-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 700px) { .sidebar { position: fixed; z-index: 5; inset: 0 auto 0 0; width: 254px; transform: translateX(-100%); transition: transform .2s ease; }.sidebar--open { transform: translateX(0); }.sidebar-close { display: grid; }.mobile-backdrop { display: block; position: fixed; z-index: 4; inset: 0; background: rgba(0,0,0,.35); }.topbar { padding: 0 19px; }.mobile-menu { display: grid; margin-right: 10px; }.breadcrumbs { flex: 1; }.topbar-actions { gap: 10px; }.search-trigger span, .search-trigger kbd { display: none; }.page-content { padding: 24px 18px 40px; }.page-heading { align-items: flex-start; flex-direction: column; gap: 16px; }.page-heading .primary-button { width: 100%; justify-content: center; }.metrics-grid { gap: 9px; }.metric-card { padding: 12px; }.metric-value { font-size: 21px; }.metric-bottom { flex-wrap: wrap; row-gap: 3px; }.chart-wrap { height: 210px; }.panel { padding: 16px; }.performance-panel .panel-heading { gap: 10px; }.select-button { max-width: 98px; }.legend { gap: 9px; flex-wrap: wrap; }.insight-banner { align-items: flex-start; flex-wrap: wrap; }.showcase-visual { height: 430px; padding: 40px 24px; }.showcase-copy h2 { font-size: 38px; }.car-silhouette { right: -8%; bottom: -8%; font-size: 280px; }.showcase-footer { gap: 8px; flex-wrap: wrap; }.showcase-footer strong { width: 100%; order: -1; }.showcase-footer span:last-child { margin-left: auto; } }
-/* ===== Velora UI/UX Master — Premium Automotive Design Tokens (applied over existing CSS) ===== */
+/* ===== HongT UI/UX Master — Premium Automotive Design Tokens (applied over existing CSS) ===== */
 
 /* Inventory controls */
 .inventory-controls {
@@ -1555,7 +1555,7 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   width: fit-content;
   padding: 0;
   background: transparent;
-  color: #f5f2e8;
+  color: #f3f5f7;
 }
 .landing-brand span {
   display: grid;
@@ -1576,26 +1576,36 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   gap: 34px;
 }
 .landing-links a {
-  color: #bbb9af;
+  color: #e2e6ea;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .16em;
 }
 .landing-links a:hover {
   color: #fff;
 }
+.landing-admin:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.6);
+}
 .landing-admin,
 .landing-menu {
   justify-self: end;
-  color: #ece9df;
+  color: #e2e6ea;
   background: transparent;
 }
 .landing-admin {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  border-bottom: 1px solid rgba(255,255,255,.42);
-  padding: 7px 0;
-  font-size: 12px;
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .16em;
 }
 .landing-menu {
   display: none;
@@ -1612,7 +1622,7 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(10,11,9,.98) 0%, rgba(10,11,9,.78) 42%, rgba(10,11,9,.08) 76%),
-    radial-gradient(circle at 70% 55%, #60615a 0%, #30312d 24%, #161713 58%, #0c0d0b 100%);
+    radial-gradient(circle at 70% 55%, #62686e 0%, #32383e 24%, #171a1d 58%, #0d0f11 100%);
 }
 .landing-hero-copy {
   position: relative;
@@ -1623,29 +1633,34 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
 }
 .landing-eyebrow {
   margin: 0 0 18px;
-  color: #aaa79c;
+  color: #aeb6be;
   font-family: 'DM Mono', monospace;
-  font-size: 9px;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: .18em;
 }
 .landing-hero h1 {
   margin: 0;
-  color: #f4f1e7;
+  color: #f3f5f7;
   font-size: clamp(54px, 6vw, 86px);
   line-height: .98;
   letter-spacing: -.07em;
 }
 .landing-hero h1 em {
-  color: #d9b77b;
+  color: #bdc4cc;
+  background: linear-gradient(to bottom, #e4e8ec, #b8c0c8, #8f98a1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Playfair Display', serif;
   font-weight: 500;
 }
 .landing-subtitle {
-  max-width: 480px;
+  max-width: 52ch;
   margin: 24px 0 30px;
-  color: #b2b0a6;
-  font-size: 14px;
+  color: #c9cfd5;
+  font-size: 17px;
   line-height: 1.65;
 }
 .landing-actions {
@@ -1660,17 +1675,26 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   gap: 8px;
   min-height: 44px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
 }
 .landing-primary {
-  padding: 0 16px;
+  padding: 14px 24px;
   border-radius: 3px;
-  background: #eeeae0;
-  color: #171815;
+  background: #eceff2;
+  color: #0e1012;
+}
+.landing-primary:hover {
+  background: #fff;
 }
 .landing-secondary {
-  color: #d8d5cb;
-  border-bottom: 1px solid #77786f;
+  color: #e2e6ea;
+  border-bottom: 1px solid #9aa3ac;
+}
+.landing-secondary:hover {
+  border-bottom-color: #fff;
 }
 .landing-hero-visual {
   position: relative;
@@ -1753,9 +1777,10 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
 }
 .landing-proof span {
   margin-top: 5px;
-  color: #85867e;
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
+  color: #b8b8b0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: .08em;
 }
@@ -1789,7 +1814,10 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   border-bottom: 1px solid #aeadA4;
   padding-bottom: 5px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .12em;
 }
 .landing-vehicle-grid {
   display: grid;
@@ -1819,10 +1847,11 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   border: 1px solid rgba(255,255,255,.22);
   border-radius: 3px;
   color: #d8d5ca;
-  padding: 5px 7px;
+  padding: 6px 12px;
   font-family: 'DM Mono', monospace;
-  font-size: 8px;
-  letter-spacing: .08em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
 }
 .landing-vehicle-image strong {
   position: absolute;
@@ -1841,19 +1870,24 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   padding-top: 13px;
 }
 .landing-vehicle-meta span {
-  color: #929087;
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
+  color: #5d5c56;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
+  letter-spacing: .12em;
 }
 .landing-vehicle-meta h3 {
   margin: 5px 0 0;
-  font-size: 16px;
+  font-size: 21px;
+  font-weight: 600;
   letter-spacing: -.02em;
 }
 .landing-vehicle-meta > strong {
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 19px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 .landing-viewing {
   display: flex;
@@ -1895,7 +1929,7 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
     width: 100%;
     flex-direction: column;
     gap: 0;
-    background: #171816;
+    background: #171a1d;
   }
   .landing-links--open a {
     padding: 16px 24px;
@@ -1943,7 +1977,7 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   }
   .landing-subtitle {
     max-width: 330px;
-    font-size: 13px;
+    font-size: 16px;
   }
   .landing-actions {
     align-items: flex-start;

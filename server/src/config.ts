@@ -32,7 +32,7 @@ export function loadConfig(environment: Record<string, string | undefined> = pro
   return {
     nodeEnv,
     port,
-    jwtSecret: configuredSecret ?? 'test-only-velora-jwt-secret-1234567890',
+    jwtSecret: configuredSecret ?? 'test-only-hongt-jwt-secret-1234567890',
     databaseUrl,
     clientOrigin,
   }
