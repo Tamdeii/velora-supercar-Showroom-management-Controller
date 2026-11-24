@@ -1,5 +1,6 @@
+import { loadConfig } from './config.js'
 import { buildApp } from './app.js'
 
+const config = loadConfig()
 const app = await buildApp()
-const port = Number(process.env.PORT ?? 4000)
-await app.listen({ port, host: '0.0.0.0' })
+await app.listen({ port: config.port, host: '0.0.0.0' })

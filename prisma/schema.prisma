@@ -21,15 +21,50 @@ enum TransactionType {
   EXPENSE
 }
 
+enum VehicleStatus {
+  DRAFT
+  AVAILABLE
+  RESERVED
+  SOLD
+  SOLD_OUT
+  ARCHIVED
+}
+
+enum MediaKind {
+  IMAGE
+  VIDEO
+}
+
+enum InquiryStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CLOSED
+  SPAM
+}
+
+enum AuditAction {
+  CREATE
+  UPDATE
+  DELETE
+  STATUS_CHANGE
+  PRICE_CHANGE
+  LOGIN
+  LOGOUT
+}
+
 model User {
-  id           String   @id @default(cuid())
-  email        String   @unique
-  displayName  String
-  passwordHash String
-  role         Role     @default(VIEWER)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  transactions Transaction[]
+  id            String         @id @default(cuid())
+  email         String         @unique
+  displayName   String
+  passwordHash  String
+  role          Role           @default(VIEWER)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  transactions  Transaction[]
+  refreshTokens RefreshToken[]
+  priceHistory  PriceHistory[]
+  auditLogs     AuditLog[]
 }
 
 model Transaction {
@@ -49,17 +84,17 @@ model Transaction {
 }
 
 model Employee {
-  id           String   @id @default(cuid())
-  firstName    String
-  lastName     String
-  email        String   @unique
-  department   String
-  jobTitle     String
-  salaryCents  Int
-  active       Boolean  @default(true)
-  hiredAt      DateTime
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id          String   @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String   @unique
+  department  String
+  jobTitle    String
+  salaryCents Int
+  active      Boolean  @default(true)
+  hiredAt     DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Product {
@@ -74,16 +109,151 @@ model Product {
 }
 
 model Campaign {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   name        String
   channel     String
   budgetCents Int
-  spendCents  Int      @default(0)
-  impressions Int      @default(0)
-  clicks      Int      @default(0)
-  conversions Int      @default(0)
+  spendCents  Int       @default(0)
+  impressions Int       @default(0)
+  clicks      Int       @default(0)
+  conversions Int       @default(0)
   startsAt    DateTime
   endsAt      DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Brand {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  logoUrl     String?
+  vehicles    Vehicle[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Location {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  address   String?
+  city      String?
+  country   String?
+  phone     String?
+  vehicles  Vehicle[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Vehicle {
+  id           String         @id @default(cuid())
+  brandId      String
+  locationId   String?
+  name         String
+  slug         String         @unique
+  vin          String?        @unique
+  modelYear    Int
+  description  String?
+  priceCents   Int
+  status       VehicleStatus  @default(DRAFT)
+  mileageKm    Int            @default(0)
+  horsepower   Int?
+  transmission String?
+  fuelType     String?
+  publishedAt  DateTime?
+  archivedAt   DateTime?
+  version      Int            @default(1)
+  brand        Brand          @relation(fields: [brandId], references: [id])
+  location     Location?      @relation(fields: [locationId], references: [id])
+  media        MediaAsset[]
+  inquiries    Inquiry[]
+  priceHistory PriceHistory[]
+  auditLogs    AuditLog[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@index([brandId])
+  @@index([locationId])
+  @@index([status])
+  @@index([status, publishedAt])
+}
+
+model MediaAsset {
+  id         String    @id @default(cuid())
+  vehicleId  String
+  kind       MediaKind
+  url        String
+  storageKey String?
+  altText    String?
+  sortOrder  Int       @default(0)
+  isPrimary  Boolean   @default(false)
+  vehicle    Vehicle   @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([vehicleId, sortOrder])
+  @@index([vehicleId, isPrimary])
+}
+
+model Inquiry {
+  id        String        @id @default(cuid())
+  vehicleId String?
+  name      String
+  email     String
+  phone     String?
+  message   String?
+  source    String?
+  status    InquiryStatus @default(NEW)
+  vehicle   Vehicle?      @relation(fields: [vehicleId], references: [id], onDelete: SetNull)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([status, createdAt])
+  @@index([vehicleId])
+  @@index([email])
+}
+
+model RefreshToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  revokedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+
+  @@index([userId, revokedAt])
+  @@index([expiresAt])
+}
+
+model PriceHistory {
+  id          String   @id @default(cuid())
+  vehicleId   String
+  changedById String?
+  priceCents  Int
+  reason      String?
+  vehicle     Vehicle  @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  changedBy   User?    @relation(fields: [changedById], references: [id], onDelete: SetNull)
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+
+  @@index([vehicleId, createdAt])
+}
+
+model AuditLog {
+  id         String      @id @default(cuid())
+  actorId    String?
+  vehicleId  String?
+  action     AuditAction
+  entityType String
+  entityId   String
+  metadata   Json?
+  actor      User?       @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  vehicle    Vehicle?    @relation(fields: [vehicleId], references: [id], onDelete: SetNull)
+  createdAt  DateTime    @default(now())
+
+  @@index([entityType, entityId, createdAt])
+  @@index([actorId, createdAt])
+  @@index([vehicleId, createdAt])
 }

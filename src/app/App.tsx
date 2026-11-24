@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   ArrowUpRight,
   BarChart3,
@@ -21,17 +21,36 @@ import {
 import { formatCurrency, getInitials, sumBy } from '../shared/utils/format'
 import { monthlyPerformance, overviewMetrics, recentTransactions } from '../shared/data/demoData'
 import type { NavItem } from './types'
+import { ProductsPage } from './Products'
+import { TransactionsPage } from './Transactions'
+import { EmployeesPage } from './Employees'
+import { FinancePage } from './Finance'
+import { PayrollPage } from './Payroll'
+import { AdvertisingPage } from './Advertising'
+import { SettingsPage } from './Settings'
+import { LandingPage } from './Landing'
 
 const navItems: NavItem[] = [
   { label: 'Overview', icon: LayoutDashboard },
   { label: 'Finance', icon: CircleDollarSign },
+  { label: 'Transactions', icon: ClipboardList },
   { label: 'People', icon: Users },
   { label: 'Payroll', icon: BriefcaseBusiness },
-  { label: 'Products', icon: Package },
+  { label: 'Products', icon: CarFront },
   { label: 'Advertising', icon: Megaphone },
 ]
 
 export function App() {
+  const [isDashboard, setIsDashboard] = useState(() => window.location.pathname.startsWith('/dashboard'))
+
+  useEffect(() => {
+    const syncRoute = () => setIsDashboard(window.location.pathname.startsWith('/dashboard'))
+    window.addEventListener('popstate', syncRoute)
+    return () => window.removeEventListener('popstate', syncRoute)
+  }, [])
+
+  if (!isDashboard) return <LandingPage />
+
   const [activePage, setActivePage] = useState('Overview')
   const [isSidebarOpen, setSidebarOpen] = useState(false)
   const [isCollapsed, setCollapsed] = useState(false)
@@ -93,6 +112,20 @@ export function App() {
         </header>
         {activePage === 'Overview' ? (
           <OverviewPage totalRevenue={totalRevenue} onShowcase={() => setShowShowcase(true)} onNotice={showNotice} />
+        ) : activePage === 'Products' ? (
+          <ProductsPage onNotice={showNotice} />
+        ) : activePage === 'Transactions' ? (
+          <TransactionsPage onNotice={showNotice} />
+        ) : activePage === 'People' ? (
+          <EmployeesPage onNotice={showNotice} />
+        ) : activePage === 'Finance' ? (
+          <FinancePage onNotice={showNotice} />
+        ) : activePage === 'Payroll' ? (
+          <PayrollPage onNotice={showNotice} />
+        ) : activePage === 'Advertising' ? (
+          <AdvertisingPage onNotice={showNotice} />
+        ) : activePage === 'Settings' ? (
+          <SettingsPage onNotice={showNotice} />
         ) : (
           <SectionPlaceholder title={activePage} onNotice={showNotice} />
         )}
@@ -105,7 +138,7 @@ export function App() {
 
 function OverviewPage({ totalRevenue, onShowcase, onNotice }: { totalRevenue: number; onShowcase: () => void; onNotice: (message: string) => void }) {
   return (
-    <div className="page-content">
+    <div className="page-content dashboard-page">
       <section className="page-heading">
         <div><p className="eyebrow">Sunday, October 18, 2026</p><h1>Good morning, Alex <span className="wave">✦</span></h1><p className="muted">Here is what is happening across your business today.</p></div>
         <button className="primary-button" onClick={onShowcase}><CarFront size={16} /> View product showcase <ArrowUpRight size={15} /></button>

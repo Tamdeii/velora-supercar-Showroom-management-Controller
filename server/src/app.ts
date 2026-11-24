@@ -3,6 +3,7 @@ import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
 import { z } from 'zod'
 import { canAccess, verifyPassword } from './auth.js'
+import { loadConfig } from './config.js'
 import { findUserByEmail, getOverview, listTransactions } from './store.js'
 import type { AuthUser } from './types.js'
 
@@ -15,9 +16,10 @@ declare module '@fastify/jwt' {
 const loginSchema = z.object({ email: z.string().email(), password: z.string().min(8) })
 
 export async function buildApp(): Promise<FastifyInstance> {
+  const config = loadConfig()
   const app = Fastify({ logger: true })
-  await app.register(cors, { origin: process.env.CLIENT_ORIGIN ?? 'http://localhost:5173' })
-  await app.register(jwt, { secret: process.env.JWT_SECRET ?? 'local-development-only-change-me' })
+  await app.register(cors, { origin: config.clientOrigin })
+  await app.register(jwt, { secret: config.jwtSecret })
 
   app.get('/health', async () => ({ status: 'ok', service: 'velora-api' }))
 

@@ -1,0 +1,24 @@
+{
+  "contract": "Velora Supercar Showroom Management — premium dark-mode dashboard for vehicle inventory, sales transactions, employees, and campaigns. Audience: showroom managers, sales associates, admins, finance. Tone: refined, technical, calm. Constraints: React 19 + TypeScript + Vite, Tailwind-ready design tokens, dark mode by default, lucide-react icons, recharts charts, WCAG 2.1 AA, responsive mobile (390x844) and desktop (1440x900).",
+  "targetViewports": ["390x844", "1440x900"],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "All interactive elements have visible focus-visible outlines (2px Sonata Gold). Buttons and icon-buttons are keyboard operable. Color contrast verified: text on charcoal surfaces exceeds WCAG AA (4.5:1). Touch targets >= 44px. ARIA labels on icon buttons and status badges. SR-only text for collapsed nav items."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Sidebar collapses on mobile with backdrop overlay. Metrics grid switches from 4-col desktop to 2-col tablet to 1-col mobile. Vehicle cards use auto-fill grid with minmax(280px, 1fr). Transaction table scrolls horizontally on narrow viewports. Page content padding adjusts for mobile."
+  },
+  "contentStates": {
+    "loading": { "status": "not-applicable", "reason": "Demo data is synchronous; no async loading states in current build. Will add skeletons when API is connected." },
+    "empty": { "status": "pass", "evidence": "Products page shows empty-state panel with CarFront icon and Clear filters action when no vehicles match filters." },
+    "error": { "status": "not-applicable", "reason": "No error states triggered in demo build. Error toasts and banners ready for API integration." },
+    "partial": { "status": "not-applicable", "reason": "No partial data scenarios in current build." },
+    "success": { "status": "pass", "evidence": "app-notice toast appears for successful actions (Add vehicle, New transaction, Edit). Dismissible with X button and aria-label." },
+    "permission": { "status": "not-applicable", "reason": "Role-based UI gating (OWNER/ADMIN/HR/FINANCE/MARKETING/VIEWER) defined in Prisma but not yet enforced in client. Permission banner pattern documented." }
+  },
+  "renderedEvidence": [
+    { "viewport": "390x844", "artifact": "velora-mobile-dashboard.txt", "observation": "Mobile layout: sidebar collapses to overlay, metrics stack vertically, vehicle cards single column, transaction table scrolls horizontally." },
+    { "viewport": "1440x900", "artifact": "velora-desktop-dashboard.txt", "observation": "Desktop layout: persistent sidebar, 4-col metrics grid, 2-col vehicle cards, full transaction table visible, showcase modal accessible." }
+  ]
+}

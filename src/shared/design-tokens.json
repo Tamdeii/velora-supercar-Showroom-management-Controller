@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json.schemastore.org/design-token",
+  "name": "Velora — Supercar Showroom Design Tokens",
+  "description": "Extracted from existing CSS variables + UI/UX Pro Max Dark Mode palette. Premium automotive: charcoal surfaces, Sonata Gold accent, Space Grotesk + Inter + DM Mono typography.",
+  "version": "1.0.0",
+  "platform": "web",
+  "tokens": {
+    "colors": {
+      "background": { "value": "#0B0C10", "description": "Deep charcoal canvas — default dark mode background" },
+      "surface": { "value": "#12141D", "description": "Card/panel surface, slightly lighter than background" },
+      "surface-hover": { "value": "#1A1C27", "description": "Hover state for interactive surfaces" },
+      "border": { "value": "#1F2330", "description": "Subtle divider between elements" },
+      "border-focus": { "value": "#D4AF37", "description": "Focus ring — Sonata Gold" },
+      "text-primary": { "value": "#FFFFFF", "description": "Headings and primary text" },
+      "text-secondary": { "value": "#C8CED4", "description": "Body text" },
+      "text-muted": { "value": "#7C8394", "description": "Captions, labels, secondary text" },
+      "accent": { "value": "#D4AF37", "description": "Sonata Gold — primary accent, CTAs, highlights" },
+      "accent-hover": { "value": "#F5A623", "description": "Gold-orange hover state" },
+      "accent-subtle": { "value": "#2A2510", "description": "Subtle gold background for badges/chips" },
+      "success": { "value": "#10B981", "description": "Approved transactions, positive states" },
+      "error": { "value": "#EF4444", "description": "Rejected/failed states" },
+      "warning": { "value": "#F59E0B", "description": "Pending approval, caution" },
+      "info": { "value": "#3B82F6", "description": "Informational states" }
+    },
+    "typography": {
+      "fontFamily": {
+        "heading": { "value": "'Space Grotesk', 'DM Sans', sans-serif", "description": "Premium modern headings" },
+        "body": { "value": "'DM Sans', sans-serif", "description": "Neutral, highly readable body" },
+        "mono": { "value": "'DM Mono', monospace", "description": "VINs, SKUs, serial numbers, codes" }
+      },
+      "fontSize": {
+        "xs": { "value": "0.75rem", "description": "Captions, labels" },
+        "sm": { "value": "0.875rem", "description": "Small body text" },
+        "base": { "value": "1rem", "description": "Default body text" },
+        "lg": { "value": "1.125rem", "description": "Large body" },
+        "xl": { "value": "1.25rem", "description": "Section headings" },
+        "2xl": { "value": "1.5rem", "description": "Page subheadings" },
+        "3xl": { "value": "1.875rem", "description": "Page headings" },
+        "4xl": { "value": "2.25rem", "description": "Hero headings" }
+      },
+      "fontWeight": {
+        "normal": { "value": "400" },
+        "medium": { "value": "500" },
+        "semibold": { "value": "600" },
+        "bold": { "value": "700" }
+      },
+      "lineHeight": {
+        "tight": { "value": "1.25", "description": "Headings" },
+        "normal": { "value": "1.5", "description": "Body text" },
+        "relaxed": { "value": "1.75", "description": "Long-form text" }
+      }
+    },
+    "spacing": {
+      "1": { "value": "0.25rem" },
+      "2": { "value": "0.5rem" },
+      "3": { "value": "0.75rem" },
+      "4": { "value": "1rem" },
+      "5": { "value": "1.25rem" },
+      "6": { "value": "1.5rem" },
+      "8": { "value": "2rem" },
+      "10": { "value": "2.5rem" },
+      "12": { "value": "3rem" },
+      "16": { "value": "4rem" }
+    },
+    "borderRadius": {
+      "sm": { "value": "4px" },
+      "md": { "value": "7px", "description": "Matches existing project radius" },
+      "lg": { "value": "9px" },
+      "full": { "value": "9999px" }
+    },
+    "shadows": {
+      "sm": { "value": "0 1px 2px rgba(0,0,0,0.3)" },
+      "md": { "value": "0 4px 6px rgba(0,0,0,0.4)" },
+      "lg": { "value": "0 20px 40px rgba(0,0,0,0.5)", "description": "Modal/overlay depth" },
+      "spotlight": { "value": "0 0 30px rgba(212, 175, 55, 0.15)", "description": "Premium vehicle card hover glow" }
+    },
+    "breakpoints": {
+      "sm": { "value": "640px" },
+      "md": { "value": "768px" },
+      "lg": { "value": "1024px" },
+      "xl": { "value": "1280px" }
+    },
+    "transitions": {
+      "fast": { "value": "150ms ease" },
+      "normal": { "value": "250ms ease" },
+      "slow": { "value": "400ms ease" }
+    }
+  },
+  "antiSlop": {
+    "noGratuitousGradients": true,
+    "noPurpleToBlueDefaults": true,
+    "noGlassMorphismWithoutPurpose": true,
+    "noRoundedCornersOnSharpElements": true,
+    "noExcessiveScrollAnimations": true,
+    "noGenericHeroStockGradient": true,
+    "noPersonalitylessSansSerif": true
+  }
+}
