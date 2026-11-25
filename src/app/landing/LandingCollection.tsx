@@ -7,15 +7,15 @@ export function LandingCollection() {
   const selectedVehicle = landingMedia.vehicles[selectedEdition]
   const editionDetails = [
     {
-      description: '4.0L Twin-Turbo V8 · 710 HP · 0–100 km/h in 2.9s',
+      description: '4.0L twin-turbo V8 producing 710 HP, reaching 100 km/h in 2.9 seconds',
       specs: ['4.0L Twin-Turbo V8', '710 HP', '2.9s', '1,283 kg', '1,540 kg'],
     },
     {
-      description: 'Alcantara & Quilted Leather Cabin · Adaptive Comfort Suspension · Bowers & Wilkins Audio',
+      description: 'Full Alcantara and quilted leather cabin with adaptive comfort suspension',
       specs: ['4.0L Twin-Turbo V8', '710 HP', '2.8s', '1,316 kg', '1,575 kg'],
     },
     {
-      description: 'Exposed Carbon Aero Pack · Lightweight Forged Wheels · Track Telemetry',
+      description: 'Exposed carbon aerodynamic package with forged wheels and track telemetry',
       specs: ['4.0L Twin-Turbo V8', '710 HP', '2.8s', '1,283 kg', '1,520 kg'],
     },
   ]
@@ -23,12 +23,12 @@ export function LandingCollection() {
   return (
     <section className="landing-collection" id="range">
       <div className="landing-section-heading">
-        <div><p className="landing-eyebrow">HONGT V1 · 2026 RANGE</p><h2>The V1 Range</h2><p className="landing-section-intro">Three specifications of one mid-engined platform, each defined by its intended use.</p></div>
+        <div><p className="landing-eyebrow">HONGT V1 2026 RANGE</p><h2>The V1 Range</h2><p className="landing-section-intro">Three specifications of one mid-engined platform, each defined by its intended use.</p></div>
         <a href="#dealers">Book a Private Viewing <ArrowUpRight size={15} /></a>
       </div>
       <div className="landing-vehicle-grid">
         {landingMedia.vehicles.map((vehicle, index) => (
-          <article className={`landing-vehicle-card ${selectedEdition === index ? 'is-selected' : ''}`} key={vehicle.name}>
+          <article className="landing-vehicle-card" key={vehicle.name}>
             <div className="landing-vehicle-image">
               <img
                 src={vehicle.image}
@@ -36,7 +36,7 @@ export function LandingCollection() {
                 loading="lazy"
                 onError={(event) => { event.currentTarget.style.display = 'none' }}
               />
-              <span>{vehicle.status}</span>
+              <span className="landing-vehicle-badge">{vehicle.status}</span>
             </div>
             <div className="landing-vehicle-meta">
               <button className="landing-edition-selector" onClick={() => setSelectedEdition(index)} aria-pressed={selectedEdition === index}>

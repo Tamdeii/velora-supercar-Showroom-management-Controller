@@ -5,7 +5,7 @@ export const landingMedia = {
   vehicles: [
     {
       name: 'HongT V1 Standard Edition',
-      meta: '2026  SUPERNOVA SILVER  COUPE',
+      meta: '2026 COUPE',
       status: 'AVAILABLE',
       price: '$345,000',
       image: '/media/vehicles/exterior/exterior-rear.png',
@@ -13,7 +13,7 @@ export const landingMedia = {
     },
     {
       name: 'HongT V1 Touring Edition',
-      meta: '2026  SUPERNOVA SILVER  ALCANTARA CABIN',
+      meta: '2026 TOURING SPEC',
       status: 'AVAILABLE',
       price: '$389,000',
       image: '/media/vehicles/interior/interior-cockpit.png',
@@ -21,7 +21,7 @@ export const landingMedia = {
     },
     {
       name: 'HongT V1 Carbon Edition',
-      meta: '2026  SUPERNOVA SILVER  CARBON PACK',
+      meta: '2026 CARBON PACK',
       status: 'SOLD OUT',
       price: '$425,000',
       image: '/media/vehicles/details/detail-carbon-mirror.png',
