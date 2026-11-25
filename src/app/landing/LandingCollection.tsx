@@ -28,7 +28,7 @@ export function LandingCollection() {
       </div>
       <div className="landing-vehicle-grid">
         {landingMedia.vehicles.map((vehicle, index) => (
-          <article className="landing-vehicle-card" key={vehicle.name}>
+          <article className="landing-vehicle-card group cursor-pointer" onClick={() => setSelectedEdition(index)} key={vehicle.name}>
             <div className="landing-vehicle-image">
               <img
                 src={vehicle.image}
@@ -45,7 +45,6 @@ export function LandingCollection() {
               <strong>{vehicle.price}</strong>
             </div>
             <p className="landing-vehicle-description">{editionDetails[index].description}</p>
-            <div className="landing-card-actions"><button onClick={() => setSelectedEdition(index)}>Discover More</button><a href="#dealers">Enquire <ArrowUpRight size={14} /></a></div>
           </article>
         ))}
       </div>
