@@ -1586,6 +1586,9 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
 .landing-links a:hover {
   color: #fff;
 }
+.landing-links a.is-active {
+  color: #fff;
+}
 .landing-admin:hover {
   color: #fff;
   border-color: rgba(255,255,255,.6);
@@ -1846,10 +1849,10 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   left: 13px;
   border: 1px solid rgba(255,255,255,.22);
   border-radius: 3px;
-  color: #d8d5ca;
+  color: #aeb6be;
   padding: 6px 12px;
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .14em;
 }
@@ -2052,5 +2055,385 @@ h2 { font-size: 15px; letter-spacing: -.02em; font-weight: 600; }
   }
   .landing-viewing h2 {
     font-size: 40px;
+  }
+}
+
+.landing-section-intro {
+  max-width: 52ch;
+  margin: 14px 0 0;
+  color: #687079;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.landing-vehicle-card {
+  display: flex;
+  flex-direction: column;
+}
+.landing-vehicle-card.is-selected {
+  outline: 1px solid #aeb6be;
+  outline-offset: -1px;
+}
+.landing-edition-selector {
+  display: block;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+}
+.landing-edition-selector span {
+  display: block;
+}
+.landing-vehicle-description {
+  min-height: 48px;
+  margin: 16px 0 0;
+  color: #626b73;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.landing-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+.landing-card-actions button,
+.landing-card-actions a {
+  color: #252a2e;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.landing-card-actions button {
+  padding: 0;
+  background: transparent;
+}
+.landing-card-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid #9aa3ac;
+  padding-bottom: 5px;
+}
+.landing-comparison {
+  margin-top: 72px;
+  padding: 28px 30px 32px;
+  color: #f3f5f7;
+  background: #0e1012;
+}
+.landing-comparison-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+}
+.landing-comparison-heading .landing-eyebrow {
+  margin-bottom: 9px;
+  color: #aeb6be;
+}
+.landing-comparison-heading h3 {
+  margin: 0;
+  color: #f3f5f7;
+  font-size: 22px;
+}
+.landing-comparison-heading > span {
+  color: #bdc4cc;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.landing-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding-top: 24px;
+}
+.landing-comparison-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.landing-comparison-grid span {
+  color: #aeb6be;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.landing-comparison-grid strong {
+  color: #f3f5f7;
+  font-size: 16px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.landing-innovation {
+  padding: 112px 48px 0;
+  color: #f3f5f7;
+  background: #0e1012;
+}
+.landing-section-heading--dark .landing-eyebrow {
+  color: #aeb6be;
+}
+.landing-section-heading--dark h2 {
+  color: #f3f5f7;
+}
+.landing-section-heading--dark .landing-section-intro {
+  color: #c9cfd5;
+}
+.landing-innovation-pillars {
+  max-width: 1080px;
+  margin: 70px auto 0;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+.landing-innovation-row {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) 220px;
+  gap: 34px;
+  align-items: start;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+.landing-innovation-number {
+  color: #aeb6be;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: .12em;
+}
+.landing-innovation-row h3 {
+  margin: 0 0 9px;
+  color: #f3f5f7;
+  font-size: 22px;
+  font-weight: 500;
+}
+.landing-innovation-row p {
+  max-width: 62ch;
+  margin: 0;
+  color: #c9cfd5;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.landing-innovation-row strong {
+  color: #bdc4cc;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.landing-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1080px;
+  margin: 78px auto 0;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+.landing-metrics div {
+  padding: 28px 20px 46px 0;
+  border-right: 1px solid rgba(255,255,255,.14);
+}
+.landing-metrics div:not(:first-child) {
+  padding-left: 20px;
+}
+.landing-metrics div:last-child {
+  border-right: 0;
+}
+.landing-metrics strong {
+  display: block;
+  color: #f3f5f7;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.landing-metrics span {
+  display: block;
+  margin-top: 9px;
+  color: #aeb6be;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.landing-dealers {
+  padding: 112px 48px 120px;
+  background: #f5f5f2;
+}
+.landing-dealer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 64px;
+}
+.landing-dealer {
+  min-height: 270px;
+  padding: 28px;
+  border: 1px solid #d5d9dc;
+  background: #fff;
+}
+.landing-dealer-kicker {
+  margin: 0 0 28px;
+  color: #7b858e;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.landing-dealer h3 {
+  margin: 0 0 18px;
+  color: #1d2328;
+  font-size: 21px;
+  font-weight: 500;
+}
+.landing-dealer > p:not(.landing-dealer-kicker) {
+  max-width: 30ch;
+  margin: 0 0 8px;
+  color: #5e6870;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.landing-dealer a {
+  display: inline-block;
+  margin: 4px 0 18px;
+  color: #20262b;
+  font-size: 14px;
+  text-decoration: none;
+}
+.landing-dealer-hours {
+  padding-top: 14px;
+  border-top: 1px solid #e0e3e5;
+}
+.landing-dealer > strong {
+  display: block;
+  margin-top: 20px;
+  color: #68737b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.landing-inquiry {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 70px;
+  margin-top: 90px;
+  padding-top: 40px;
+  border-top: 1px solid #d5d9dc;
+}
+.landing-inquiry h3 {
+  margin: 0 0 12px;
+  color: #1d2328;
+  font-size: 28px;
+  font-weight: 500;
+}
+.landing-inquiry > div > p:last-child {
+  max-width: 30ch;
+  margin: 0;
+  color: #68737b;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.landing-inquiry form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.landing-inquiry label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #55616a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.landing-inquiry input,
+.landing-inquiry select,
+.landing-inquiry textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 12px;
+  border: 1px solid #c8cfd4;
+  border-radius: 2px;
+  color: #1d2328;
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.landing-inquiry textarea {
+  resize: vertical;
+}
+.landing-inquiry-wide {
+  grid-column: 1 / -1;
+}
+.landing-inquiry .landing-primary {
+  justify-content: center;
+  width: fit-content;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .landing-section-intro {
+    font-size: 14px;
+  }
+  .landing-comparison {
+    margin-top: 48px;
+    padding: 22px 18px 24px;
+  }
+  .landing-comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 14px;
+  }
+  .landing-innovation,
+  .landing-dealers {
+    padding: 76px 18px 82px;
+  }
+  .landing-innovation-pillars {
+    margin-top: 44px;
+  }
+  .landing-innovation-row {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .landing-innovation-row strong {
+    grid-column: 2;
+  }
+  .landing-innovation-row h3 {
+    font-size: 20px;
+  }
+  .landing-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 52px;
+  }
+  .landing-metrics div:nth-child(2) {
+    border-right: 0;
+  }
+  .landing-metrics div:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(255,255,255,.14);
+  }
+  .landing-metrics div:nth-child(3) {
+    padding-left: 0;
+  }
+  .landing-dealer-grid {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+  }
+  .landing-dealer {
+    min-height: auto;
+  }
+  .landing-inquiry {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    margin-top: 62px;
+  }
+  .landing-inquiry form {
+    grid-template-columns: 1fr;
+  }
+  .landing-inquiry-wide {
+    grid-column: auto;
+  }
+  .landing-inquiry .landing-primary {
+    width: 100%;
   }
 }

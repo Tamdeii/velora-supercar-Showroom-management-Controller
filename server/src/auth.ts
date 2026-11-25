@@ -2,12 +2,12 @@ import { createHash, randomBytes, timingSafeEqual } from 'node:crypto'
 import type { AuthUser, Role } from './types.js'
 
 const rolePermissions: Record<Role, readonly string[]> = {
-  OWNER: ['overview:read', 'finance:write', 'people:write', 'payroll:write', 'products:write', 'advertising:write'],
-  ADMIN: ['overview:read', 'finance:write', 'people:write', 'payroll:write', 'products:write', 'advertising:write'],
+  OWNER: ['overview:read', 'catalog:read', 'catalog:write', 'inquiries:read', 'inquiries:write', 'finance:write', 'people:write', 'payroll:write', 'products:write', 'advertising:write'],
+  ADMIN: ['overview:read', 'catalog:read', 'catalog:write', 'inquiries:read', 'inquiries:write', 'finance:write', 'people:write', 'payroll:write', 'products:write', 'advertising:write'],
   HR: ['overview:read', 'people:write', 'payroll:write'],
   FINANCE: ['overview:read', 'finance:write', 'payroll:read'],
-  MARKETING: ['overview:read', 'products:read', 'advertising:write'],
-  VIEWER: ['overview:read'],
+  MARKETING: ['overview:read', 'catalog:read', 'products:read', 'advertising:write'],
+  VIEWER: ['overview:read', 'catalog:read'],
 }
 
 export function hashPassword(password: string, salt = randomBytes(16).toString('hex')): string {

@@ -21,8 +21,8 @@ export function LandingHero() {
         <h1 id="landing-title">Rare machines.<br /> <em>Luxurious standards.</em></h1>
         <p className="landing-subtitle">A private collection of super cars, selected for VIP, and the way they make every road feel furious</p>
         <div className="landing-actions">
-          <a className="landing-primary" href="#collection">Discover <ArrowUpRight size={16} /></a>
-          <a className="landing-secondary" href="#private-viewing">Enquire</a>
+          <a className="landing-primary" href="#range">Discover <ArrowUpRight size={16} /></a>
+          <a className="landing-secondary" href="#dealers">Enquire</a>
         </div>
       </div>
       <div
@@ -35,7 +35,7 @@ export function LandingHero() {
           <source src={landingMedia.heroLoopMp4} type="video/mp4" />
         </video>
       </div>
-      <a className="landing-scroll" href="#collection" aria-label="Scroll to collection"><ArrowDown size={16} /></a>
+      <a className="landing-scroll" href="#range" aria-label="Scroll to range"><ArrowDown size={16} /></a>
     </section>
   )
 }
